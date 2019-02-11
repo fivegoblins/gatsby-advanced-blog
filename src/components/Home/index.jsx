@@ -37,6 +37,7 @@ const SocialInformation = styled.section`
   font-size: 50px;
   margin-top: -240px;
   text-align: center;
+  cursor: pointer;
 
   a {
     padding: 0 10px;
@@ -61,72 +62,29 @@ const Home = ({ portfolios }) => (
             <a
               href="https://github.com/fivegoblins"
               target="_blank"
-              rel="noreferrer noopener"
             >
               <FaGithub />
             </a>
             <a
               href="https://twitter.com/twelvegoblins"
               target="_blank"
-              rel="noreferrer noopener"
             >
               <FaTwitter />
             </a>
             <a
               href="mailto:alexswartz9753@gmail.com"
               target="_blank"
-              rel="noreferrer noopener"
             >
               <FaEnvelope />
             </a>
             <a
               href="https://www.linkedin.com/in/alexandra-swartz-320a27173/"
               target="_blank"
-              rel="noreferrer noopener"
             >
               <FaLinkedin />
             </a>
           </SocialInformation>
-    {size(portfolios) >= 4 ? (
-      <SimpleWrapper>
-        {flow(
-          slice(0, 4),
-          map((edge) => {
-            const portfolio = get('node.frontmatter')(edge);
-            const { path, title, images } = portfolio;
-            const image = isArray(images) ? first(images) : null;
-
-            if (!isEmpty(image)) {
-              return (
-                <PortfolioCard key={path}>
-                  <Link to={path}>
-                    {includes('//')(image) ? (
-                      <img src={image} alt="portfolio" />
-                    ) : (
-                      <img src={require(`~/resources/${image}`)} alt="portfolio" />
-                    )}
-                    <h6>
-                      {title}
-                    </h6>
-                  </Link>
-                </PortfolioCard>
-              );
-            }
-
-            return (
-              <PortfolioCard key={path}>
-                <Link to={path}>
-                  <h4>
-                    {title}
-                  </h4>
-                </Link>
-              </PortfolioCard>
-            );
-          })
-        )(portfolios)}
-      </SimpleWrapper>
-    ) : null}
-  </Fragment>
+    </Fragment>
 );
 
 Home.propTypes = {

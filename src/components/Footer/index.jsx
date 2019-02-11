@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const FooterWrapper = styled.section`
   padding: 10px 0;
+  margin-top: 80px;
   color: #000;
-  background-color: #eee;
+  background-color: white;
   font-size: 11px;
   font-weight: 500;
   text-align: center;
