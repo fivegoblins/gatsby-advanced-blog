@@ -123,13 +123,13 @@ const Home = styled(FaHome)`
 
 const StyledLink = styled(Link)`
   &.active {
-    color: ${SECONDARY_COLOR};
-    text-decoration: underline;
+    color: #672CBA;
+    text-decoration: none;
   }
 
   &:hover {
-    color: ${SECONDARY_COLOR};
-    text-decoration: underline;
+    color: #672CBA;
+    text-decoration: none;
   }
 `;
 

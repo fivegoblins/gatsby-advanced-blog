@@ -4,12 +4,12 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import FaPinrt from 'react-icons/lib/fa/print';
 import FaGithub from 'react-icons/lib/fa/github';
-import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
 import { forEach, startsWith, get } from 'lodash/fp';
 import Clearfix from '~/components/Common/Clearfix';
 import * as profileUrl from '~/resources/me.png';
+import * as profilePic from '../../images/profilepic.jpg';
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
@@ -29,28 +29,36 @@ const Wrapper = styled.section`
 
 const BasicInformation = styled.section`
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
+  color: #D61F73;
 
   h1 {
     font-size: 2em;
     margin: .67em 0;
   }
 
-  p {
+  a {
     margin: .67em 0;
+    font-size: 0.75em;
+    margin-top: -50px;
+    color: #672CBA;
   }
 
   img {
     border-radius: 50%;
+    width: 118px;
+    height: 110px;
   }
 `;
 
 const SocialInformation = styled.section`
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
+  padding-top: 10px;
 
   a {
-    padding: 0 6px;
+    padding: 15px 8px;
+    color: #672CBA;
   }
 `;
 
@@ -107,9 +115,9 @@ class Resume extends PureComponent {
         <Clearfix>
           <Helmet>
             <title>
-              WONISM | RESUME
+              ALEX | RESUME
             </title>
-            <meta name="og:title" content="WONISM | RESUME" />
+            <meta name="og:title" content="ALEX | RESUME" />
           </Helmet>
           <Clearfix>
             <button type="button" onClick={printPage}>
@@ -119,42 +127,35 @@ class Resume extends PureComponent {
           </Clearfix>
           <BasicInformation>
             <img
-              src={profileUrl.default}
+              src={profilePic}
               alt=""
               width="120"
               height="120"
             />
             <h1>
-              wonism
+              alexandra swartz
             </h1>
-            <p>
-              yocee57@gmail.com
-            </p>
+            <a href="mailto:alexswartz9753@gmail.com">
+              alexswartz9753@gmail.com
+            </a>
           </BasicInformation>
           <SocialInformation>
             <a
-              href="https://github.com/wonism"
+              href="https://github.com/fivegoblins"
               target="_blank"
               rel="noreferrer noopener"
             >
               <FaGithub />
             </a>
             <a
-              href="https://twitter.com/j1ism"
+              href="https://twitter.com/twelvegoblins"
               target="_blank"
               rel="noreferrer noopener"
             >
               <FaTwitter />
             </a>
             <a
-              href="https://www.facebook.com/j1.chic"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/wonism/"
+              href="https://www.linkedin.com/in/alexandra-swartz-320a27173/"
               target="_blank"
               rel="noreferrer noopener"
             >
