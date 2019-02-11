@@ -1,10 +1,17 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 
-
+const titleHover = keyframes`
+  0% {
+    color: #D61F73;
+  }
+  100% {
+    color: #672CBA;
+  }
+`;
 
 const Title = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
@@ -25,20 +32,13 @@ const Title = styled.h1`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-`;
 
-const SocialInformation = styled.section`
-  font-size: 50px;
-  margin-top: -240px;
-  text-align: center;
-  
-
-  a {
-    padding: 0 10px;
-    cursor: pointer;
-    color: #672CBA;
+  &:hover {
+    color: black;
+    animation: ${titleHover} 1s forwards;
   }
 `;
+
 
 
 const Home = ({ portfolios }) => (

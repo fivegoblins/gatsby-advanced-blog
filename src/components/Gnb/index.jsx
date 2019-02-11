@@ -134,6 +134,7 @@ const StyledLink = styled(Link)`
 `;
 
 const SearchBarWrapper = styled.div`
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -157,6 +158,7 @@ const SearchBarWrapper = styled.div`
 `;
 
 const SearchBar = styled.input`
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -375,46 +377,10 @@ const Gnb = ({
                 <Home />
               </StyledLink>
             </ListMenu>
-            <ListMenu>
-              <StyledLink to="/pages/1" className={isPost ? 'active' : ''} onClick={closeMenu}>
-                Posts
-              </StyledLink>
-              {
-                size(categories)
-                  ? (
-                    <Fragment>
-                      &nbsp;
-                      <MovableFaCaretDown
-                        className={isSubMenuOpened ? 'is-active' : ''}
-                        onClick={isSubMenuOpened ? closeSubMenu : openSubMenu}
-                      />
-                    </Fragment>
-                  )
-                  : null
-              }
-              <SubMenu>
-                <div>
-                  {flow(
-                    filter(({ key }) => !isEqual('__ALL__')(key)),
-                    map(({ key, length }) => (
-                      <li key={key}>
-                        <Link to={`/categories/${key}/1`} onClick={closeMenu}>
-                          {key}
-                          &nbsp;
-                          <small>
-                            {`(${length})`}
-                          </small>
-                        </Link>
-                      </li>
-                    ))
-                  )(categories)}
-                </div>
-              </SubMenu>
-            </ListMenu>
             {hasPortfolio ? (
               <ListMenu>
                 <StyledLink to="/portfolios" className={isPortfolio ? 'active' : ''} onClick={closeMenu}>
-                  Portfolio
+                  About
                 </StyledLink>
               </ListMenu>
             ) : null}
@@ -479,35 +445,10 @@ const Gnb = ({
             <Home />
           </StyledLink>
         </ListMenu>
-        <ListMenu>
-          <StyledLink to="/pages/1" className={isPost ? 'active' : ''}>
-            Posts
-            &nbsp;
-            {size(categories) ? <FaCaretDown /> : null}
-          </StyledLink>
-          <SubMenu>
-            <div>
-              {flow(
-                filter(({ key }) => !isEqual('__ALL__')(key)),
-                map(({ key, length }) => (
-                  <li key={key}>
-                    <Link to={`/categories/${key}/1`}>
-                      {key}
-                      &nbsp;
-                      <small>
-                        {`(${length})`}
-                      </small>
-                    </Link>
-                  </li>
-                ))
-              )(categories)}
-            </div>
-          </SubMenu>
-        </ListMenu>
         {hasPortfolio ? (
           <ListMenu>
             <StyledLink to="/portfolios" className={isPortfolio ? 'active' : ''}>
-              Portfolio
+              About
             </StyledLink>
           </ListMenu>
         ) : null}

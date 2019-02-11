@@ -98,9 +98,9 @@ const Portfolio = ({ data }) => {
     <Wrapper>
       <Helmet>
         <title>
-          {`ALEXANDRA | ${toUpper(title)}`}
+          ALEX | ABOUT
         </title>
-        <meta name="og:title" content={`ALEXANDRA | ${toUpper(title)}`} />
+        <meta name="og:title" content='ALEXANDRA | ABOUT' />
       </Helmet>
       <PortfolioDescription>
         <section dangerouslySetInnerHTML={{ __html: get('html')(portfolio) }} />

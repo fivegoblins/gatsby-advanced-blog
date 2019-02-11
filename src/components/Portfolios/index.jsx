@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { isEmpty, isArray, includes, map, get, first } from 'lodash/fp';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import PortfolioCard from '~/components/Common/PortfolioCard';
 
 const Wrapper = SimpleWrapper.extend`
   padding: 100px 0 0;
@@ -20,46 +19,11 @@ const Portfolios = ({ data }) => {
     <Wrapper>
       <Helmet>
         <title>
-          WONISM | PORTFOLIOS
+          ALEX | ABOUT
         </title>
-        <meta name="og:title" content="WONISM | PORTFOLIOS" />
+        <meta name="og:title" content="ALEX | ABOUT" />
       </Helmet>
-      {map((portfolio) => {
-        if (portfolio.node.path !== '/404/') {
-          const frontmatter = get('node.frontmatter')(portfolio);
-          const { path, title, images } = frontmatter;
-          const image = isArray(images) ? first(images) : null;
-
-          if (!isEmpty(image)) {
-            return (
-              <PortfolioCard key={path}>
-                <Link to={path}>
-                  {includes('//')(image) ? (
-                    <img src={image} alt="portfolio" />
-                  ) : (
-                    <img src={require(`~/resources/${image}`)} alt="portfolio" />
-                  )}
-                  <h6>
-                    {title}
-                  </h6>
-                </Link>
-              </PortfolioCard>
-            );
-          }
-
-          return (
-            <PortfolioCard key={path}>
-              <Link to={path}>
-                <h4>
-                  {title}
-                </h4>
-              </Link>
-            </PortfolioCard>
-          );
-        }
-
-        return null;
-      })(portfolios)}
+     
     </Wrapper>
   );
 };
