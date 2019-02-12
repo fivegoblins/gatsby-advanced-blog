@@ -20,6 +20,15 @@ const titleHover = keyframes`
   }
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const Title = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
   position: absolute;
@@ -39,6 +48,7 @@ const Title = styled.h1`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  animation: ${fadeIn} 4s forwards;
 
   &:hover {
     color: black;
@@ -52,6 +62,7 @@ const SocialMediaWrapper = styled.div`
   justify-content: center;
   margin-top: -260px;
   margin-bottom: 100px;
+  animation: ${fadeIn} 2s forwards;
 
   a {
     font-size: 60px;
