@@ -27,12 +27,13 @@ const Wrapper = styled.section`
   img {
     box-shadow: 2px 3px 3px 1px lightgray;
     border-radius: 5px;
-    width: 80%;
+    width: 75%;
     margin-bottom: 20px;
     height: 220px;
 
     @media (max-width: 500px) {
       height: 160px;
+      width: 85%;
     }
   }
 `;
@@ -43,6 +44,11 @@ const Screenshots = styled.div`
   align-items: center;
   margin-left: 10%;
   width: 100%;
+
+  @media (max-width: 500px) {
+    margin-left: 8%;
+    margin-top: 40px;
+  }
 `;
 
 const MDInformation = styled.section`

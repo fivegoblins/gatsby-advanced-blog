@@ -5,26 +5,60 @@ import { Link } from 'gatsby';
 import { isEmpty, isArray, includes, map, get, first } from 'lodash/fp';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import * as image from '../../images/image.jpg';
+import FaGithub from 'react-icons/lib/fa/github';
+import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 
 const Wrapper = SimpleWrapper.extend`
   padding: 100px 0 0;
-  width: 70%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 414px) {
     padding: 70px 0 0;
+  }
+
+  div {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
   }
 
   img {
     border-radius: 100%;
     height: 150px;
     width: 150px;
-    margin-top: 40px;
+
+  }
+  
+  p {
+    width: 60%;
+    line-height: 1.75;
+    font-size: 18px;
+  }
+
+  span {
+    color: #D61F73;
+  }
+
+  section {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-right: 1.5%;
+  }
+
+  a {
+    font-size: 30px;
+    color: #672CBA;
   }
 `;
-
 
 
 const Portfolios = ({ data }) => {
@@ -38,7 +72,24 @@ const Portfolios = ({ data }) => {
         </title>
         <meta name="og:title" content="ALEX | ABOUT" />
       </Helmet>
-     <img src={image}></img>
+      <div>
+        <img src={image}></img>
+        <p>Hi! My name is <span>Alexandra Swartz</span>. I’m a <span>software developer </span>from Philadelphia, Pennsylvania.<br></br>I attended Lambda School’s Web Development program, and later worked there as a Project Manager. I build full-stack JavaScript applications with <span>React</span>, <span>Redux</span>, and <span>Node</span>.<br></br>Check out some of my projects and <span>get in touch </span>with me if you’d like to work together!</p>
+     </div>
+     <section>
+     <a href='https://github.com/fivegoblins'>
+       <FaGithub/>
+     </a>
+     <a href='https://twitter.com/twelvegoblins'>
+       <FaTwitter/>
+     </a>
+     <a href='https://linkedin.com/in/alexandra-swartz-320a27173/'>
+       <FaLinkedin/>
+     </a>
+     <a href='mailto:alexswartz9753@gmail.com'>
+       <FaEnvelope/>
+     </a>
+     </section>
     </Wrapper>
   );
 };
