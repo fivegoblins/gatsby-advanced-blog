@@ -48,7 +48,10 @@ const Title = styled.h1`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  animation: ${fadeIn} 4s forwards;
+
+  div {
+    animation: ${fadeIn} 4s forwards;
+  }
 
   &:hover {
     color: black;
@@ -75,7 +78,9 @@ const Home = ({ portfolios }) => (
   <Fragment>
     <Wrapper isHome>
       <Title>
+        <div>
         Hello, I'm Alex!
+        </div>
       </Title>
       <Helmet>
         <title>
