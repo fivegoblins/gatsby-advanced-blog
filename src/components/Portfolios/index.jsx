@@ -27,6 +27,13 @@ const Wrapper = SimpleWrapper.extend`
     flex-direction: row;
     justify-content: space-around;
     margin-top: 40px;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      width: 90%;
+      align-content: center;
+      margin-left: 10%;
+    }
   }
 
   img {
@@ -34,12 +41,21 @@ const Wrapper = SimpleWrapper.extend`
     height: 150px;
     width: 150px;
 
+    @media (max-width: 500px) {
+      margin-left: 25%;
+      margin-bottom: 15px;
+    }
+
   }
   
   p {
     width: 60%;
     line-height: 1.75;
     font-size: 18px;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 
   span {
@@ -52,11 +68,19 @@ const Wrapper = SimpleWrapper.extend`
     justify-content: space-around;
     margin-top: 20px;
     margin-right: 1.5%;
+
+    @media (max-width: 500px) {
+      width: 60%;
+    }
   }
 
   a {
     font-size: 30px;
     color: #672CBA;
+
+    @media (max-width: 500px) {
+      font-size: 40px;
+    }
   }
 `;
 
