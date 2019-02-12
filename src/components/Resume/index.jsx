@@ -2,10 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import FaGithub from 'react-icons/lib/fa/github';
-import FaTwitter from 'react-icons/lib/fa/twitter';
-import FaLinkedin from 'react-icons/lib/fa/linkedin';
-import FaEnvelope from 'react-icons/lib/fa/envelope';
 import { forEach, startsWith, get } from 'lodash/fp';
 import Clearfix from '~/components/Common/Clearfix';
 
@@ -92,44 +88,10 @@ class Resume extends PureComponent {
         <Clearfix>
           <Helmet>
             <title>
-              ALEX | RESUME
+              ALEX | PROJECTS
             </title>
-            <meta name="og:title" content="ALEX | RESUME" />
+            <meta name="og:title" content="ALEX | PROJECTS" />
           </Helmet>
-         <p>Check out my <span>work</span>.<br></br>
-          Read my <span>tweets</span>. <br></br>
-          Look at my <span>resume</span>.<br></br>
-          Send me a <span>message</span>.</p>
-          <SocialInformation>
-            <a
-              href="https://github.com/fivegoblins"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://twitter.com/twelvegoblins"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/alexandra-swartz-320a27173/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="mailto:alexswartz9753@gmail.com"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaEnvelope />
-            </a>
-          </SocialInformation>
           <MDInformation>
             <div
               ref={(mdWrapper) => { this.$mdWrapper = mdWrapper; }}

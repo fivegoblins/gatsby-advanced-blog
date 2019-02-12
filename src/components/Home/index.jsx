@@ -3,13 +3,20 @@ import PropTypes from 'prop-types';
 import styled, {keyframes} from 'styled-components';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
+import FaGithub from 'react-icons/lib/fa/github';
+import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 
 const titleHover = keyframes`
   0% {
     color: #D61F73;
   }
-  100% {
+  50% {
     color: #672CBA;
+  }
+  100% {
+    color: #D61F73;
   }
 `;
 
@@ -35,11 +42,23 @@ const Title = styled.h1`
 
   &:hover {
     color: black;
-    animation: ${titleHover} 1s forwards;
+    animation: ${titleHover} 2s forwards;
   }
 `;
 
+const SocialMediaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -260px;
+  margin-bottom: 100px;
 
+  a {
+    font-size: 60px;
+    padding: 0 10px;
+    color: #672CBA;
+  }
+`;
 
 const Home = ({ portfolios }) => (
   <Fragment>
@@ -54,6 +73,20 @@ const Home = ({ portfolios }) => (
         <meta name="og:title" content="I'm Wonism!" />
       </Helmet>
     </Wrapper>
+    <SocialMediaWrapper>
+      <a href='https://github.com/fivegoblins'>
+        <FaGithub/>
+      </a>
+      <a href='https://twitter.com/twelvegoblins'>
+        <FaTwitter/>
+      </a>
+      <a href='https://linkedin.com/in/alexandra-swartz-320a27173/'>
+        <FaLinkedin/>
+      </a>
+      <a href='mailto:alexswartz9753@gmail.com'>
+        <FaEnvelope/>
+      </a>
+      </SocialMediaWrapper>
     </Fragment>
 );
 

@@ -386,7 +386,7 @@ const Gnb = ({
             ) : null}
             <ListMenu>
               <StyledLink to="/resume" className={isResume ? 'active' : ''} onClick={closeMenu}>
-                Resume
+                Projects
               </StyledLink>
             </ListMenu>
             <SearchBarWrapper>
@@ -454,7 +454,7 @@ const Gnb = ({
         ) : null}
         <ListMenu>
           <StyledLink to="/resume" className={isResume ? 'active' : ''}>
-            Resume
+            Projects
           </StyledLink>
         </ListMenu>
         <SearchBarWrapper>
