@@ -2,14 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import FaPinrt from 'react-icons/lib/fa/print';
 import FaGithub from 'react-icons/lib/fa/github';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 import { forEach, startsWith, get } from 'lodash/fp';
 import Clearfix from '~/components/Common/Clearfix';
-import * as profileUrl from '~/resources/me.png';
-import * as profilePic from '../../images/profilepic.jpg';
+
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
@@ -27,43 +26,21 @@ const Wrapper = styled.section`
   }
 `;
 
-const BasicInformation = styled.section`
-  text-align: center;
-  font-size: 20px;
-  color: #D61F73;
-
-  h1 {
-    font-size: 2em;
-    margin: .67em 0;
-  }
-
-  a {
-    margin: .67em 0;
-    font-size: 0.75em;
-    margin-top: -50px;
-    color: #672CBA;
-  }
-
-  img {
-    border-radius: 50%;
-    width: 118px;
-    height: 110px;
-  }
-`;
-
 const SocialInformation = styled.section`
-  font-size: 30px;
+  font-size: 60px;
   text-align: center;
   padding-top: 10px;
+  margin-bottom: 80px;
 
   a {
-    padding: 15px 8px;
+    padding: 15px 10px;
     color: #672CBA;
   }
 `;
 
 const MDInformation = styled.section`
   font-size: 16px;
+  display: none;
 
   h2 {
     font-size: 1.5em;
@@ -119,26 +96,10 @@ class Resume extends PureComponent {
             </title>
             <meta name="og:title" content="ALEX | RESUME" />
           </Helmet>
-          <Clearfix>
-            <button type="button" onClick={printPage}>
-              <FaPinrt />
-              Print
-            </button>
-          </Clearfix>
-          <BasicInformation>
-            <img
-              src={profilePic}
-              alt=""
-              width="120"
-              height="120"
-            />
-            <h1>
-              alexandra swartz
-            </h1>
-            <a href="mailto:alexswartz9753@gmail.com">
-              alexswartz9753@gmail.com
-            </a>
-          </BasicInformation>
+         <p>Check out my <span>work</span>.<br></br>
+          Read my <span>tweets</span>. <br></br>
+          Look at my <span>resume</span>.<br></br>
+          Send me a <span>message</span>.</p>
           <SocialInformation>
             <a
               href="https://github.com/fivegoblins"
@@ -160,6 +121,13 @@ class Resume extends PureComponent {
               rel="noreferrer noopener"
             >
               <FaLinkedin />
+            </a>
+            <a
+              href="mailto:alexswartz9753@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <FaEnvelope />
             </a>
           </SocialInformation>
           <MDInformation>
