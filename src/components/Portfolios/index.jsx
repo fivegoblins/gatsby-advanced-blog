@@ -32,7 +32,7 @@ const Wrapper = SimpleWrapper.extend`
       flex-direction: column;
       width: 90%;
       align-content: center;
-      margin-left: 10%;
+      margin-left: 5%;
     }
   }
 
