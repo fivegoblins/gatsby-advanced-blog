@@ -9,7 +9,10 @@ import * as image from '../../images/image.jpg';
 const Wrapper = SimpleWrapper.extend`
   padding: 100px 0 0;
   width: 70%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   @media (max-width: 414px) {
     padding: 70px 0 0;
   }
@@ -18,6 +21,7 @@ const Wrapper = SimpleWrapper.extend`
     border-radius: 100%;
     height: 150px;
     width: 150px;
+    margin-top: 40px;
   }
 `;
 
