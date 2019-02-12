@@ -57,6 +57,10 @@ const Title = styled.h1`
     color: black;
     animation: ${titleHover} 2s forwards;
   }
+
+  @media (max-width: 500px) {
+    font-size: 48px;
+  }
 `;
 
 const SocialMediaWrapper = styled.div`
