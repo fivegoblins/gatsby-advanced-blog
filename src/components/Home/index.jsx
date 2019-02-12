@@ -71,6 +71,10 @@ const SocialMediaWrapper = styled.div`
     font-size: 60px;
     padding: 0 10px;
     color: #672CBA;
+
+    @media (max-width: 500px) {
+      font-size: 30px;
+    }
   }
 `;
 

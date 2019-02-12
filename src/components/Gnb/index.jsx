@@ -143,7 +143,7 @@ const SearchBarWrapper = styled.div`
   margin: auto;
   padding: 0 36px 0 0;
   text-align: right;
-  @media (max-width: 414px) {
+  @media (max-width: 500px) {
     display: none;
     position: relative;
     padding: 0;
@@ -173,7 +173,7 @@ const SearchBar = styled.input`
   font-size: 18px;
   outline: 0;
   z-index: 1000;
-  @media (max-width: 414px) {
+  @media (max-width: 500px) {
     display: none;
     right: 0;
     left: 0;
