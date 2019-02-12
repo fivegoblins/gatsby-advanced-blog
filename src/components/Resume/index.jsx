@@ -4,10 +4,13 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { forEach, startsWith, get } from 'lodash/fp';
 import Clearfix from '~/components/Common/Clearfix';
+import IGShot from '../../screenshots/IGShot.png';
+import NotesShot from '../../screenshots/NotesShot.png';
 
 
 const Wrapper = styled.section`
   padding: 100px 0 0;
+  margin: 0 auto;
   @media (max-width: 414px) {
     padding: 70px 16px 0;
   }
@@ -20,18 +23,26 @@ const Wrapper = styled.section`
   button {
     float: right;
   }
+
+  img {
+    box-shadow: 2px 3px 3px 1px lightgray;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 20px;
+    height: 220px;
+
+    @media (max-width: 500px) {
+      height: 160px;
+    }
+  }
 `;
 
-const SocialInformation = styled.section`
-  font-size: 60px;
-  text-align: center;
-  padding-top: 10px;
-  margin-bottom: 80px;
-
-  a {
-    padding: 15px 10px;
-    color: #672CBA;
-  }
+const Screenshots = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10%;
+  width: 100%;
 `;
 
 const MDInformation = styled.section`
@@ -92,6 +103,14 @@ class Resume extends PureComponent {
             </title>
             <meta name="og:title" content="ALEX | PROJECTS" />
           </Helmet>
+          <Screenshots>
+            <a href='https://github.com/fivegoblins/Instagram-Clone' target='_blank'>
+              <img src={IGShot}></img>
+            </a>
+            <a href='https://github.com/fivegoblins/back-end-project-week' target='_blank'>
+              <img src={NotesShot}></img>
+            </a>
+            </Screenshots>
           <MDInformation>
             <div
               ref={(mdWrapper) => { this.$mdWrapper = mdWrapper; }}
