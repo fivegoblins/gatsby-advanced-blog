@@ -22,7 +22,7 @@ const Wrapper = SimpleWrapper.extend`
   }
 
   div {
-    width: 60%;
+    width: 55%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
